@@ -1,17 +1,15 @@
 import {React, useState} from 'react';
 import {Layout, Menu} from 'antd';
-import { Link } from 'react-router-dom'
 
 import Register from './Register';
 import Attend from './Attend';
 import Evaluate from './Evaluate';
+import MenuCompo from '../Component/MenuCompo';
 
-import './styleUser.css';
 
-import logoPks from './logo-pks.png';
 //import benda yang perlu di menu
 
-const {Content , Sider , Footer , Header } = Layout;
+const {Content , Sider , Footer } = Layout;
 const layoutStyle= {
   height:'100vb' , 
   display: 'flex',
@@ -39,11 +37,7 @@ function UserHomepage() {
 
   return (
     <Layout style={layoutStyle}>
-      <Header style={{backgroundColor: 'white', display: 'flex' , justifyContent:'space-between', alignItems:'center'}}>
-      <img src={logoPks} width="auto" height='80%'  />
-      <p className='welcomeText'>Welcome to Internal Training Management System PKS</p>
-      <Link to={'/LoginPage'}>Log-Out</Link>
-      </Header>
+      <MenuCompo/>
       <Layout >
         <Sider style={{backgroundColor: 'white'}}>
           <Menu style={styleMenu} items={itemInsideMenu} onClick={handleClick} selectedKeys={selectedKey} />

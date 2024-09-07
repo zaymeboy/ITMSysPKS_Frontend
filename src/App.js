@@ -10,6 +10,7 @@ import Error404 from './page/Error404';
 import UserHomepage from './page/User/UserHomepage';
 import StaffHomepage from './page/Staff/StaffHomepage';
 import AdminHomepage from './page/Admin/AdminHomepage';
+import DashboardPage from './page/Dashboard/DashboardPage';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
       <Route path='/Admin' element={<AdminHomepage/>}/>
       <Route path='/User' element={<UserHomepage/>}/>
       <Route path='/Staff' element={<StaffHomepage/>}/>
+      <Route path='/Dashboard' element={<DashboardPage/>}/>
+      
     </Routes>
   );
 }

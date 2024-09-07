@@ -3,12 +3,12 @@ import {Layout, Menu} from 'antd';
 import ApproveCourse from './ApproveCourse';
 import CourseList from './CourseList';
 import './styleAdmin.css';
-import { Link } from 'react-router-dom'
 
-import logoPks from './logo-pks.png';
+import MenuCompo from '../Component/MenuCompo';
+
 //import benda yang perlu di menu
 
-const {Content , Sider , Footer , Header } = Layout;
+const {Content , Sider , Footer } = Layout;
 const layoutStyle= {
   height:'100vb' , 
   display: 'flex',
@@ -34,11 +34,7 @@ function AdminHomepage() {
 
   return (
     <Layout style={layoutStyle}>
-      <Header style={{backgroundColor: 'white', display: 'flex' , justifyContent:'space-between', alignItems:'center'}}>
-      <img src={logoPks} width="auto" height='80%'  />
-      <p className='welcomeText'>Welcome to Internal Training Management System PKS</p>
-      <Link to={'/LoginPage'}><a className='btnLogout' href=''>Log-Out</a></Link>
-      </Header>
+      <MenuCompo/>
       <Layout >
         <Sider style={{backgroundColor: 'white'}}>
           <Menu style={styleMenu} items={itemInsideMenu} onClick={handleClick} selectedKeys={selectedKey} />

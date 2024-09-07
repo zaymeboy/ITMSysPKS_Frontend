@@ -1,0 +1,42 @@
+.styleHeader{
+    background-color: white;
+    display: flex ;
+    justify-content:space-between;
+    align-items:center;
+    width: 100%;
+}
+
+.styleImg{
+    width : auto;
+    height: 50px;
+}
+
+.welcomeText{
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.styleLogout{
+    background-color: rgb(4, 4, 174);
+    padding: 0px 5px 2px 5px;
+    color: white;
+    border-radius: 2px;
+}
+
+@media screen and (max-width: 768px) {
+    .welcomeText{
+        display: none;
+    }
+    .styleHeader{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 130px;
+    }
+    .styleImg{
+        width : auto;
+        height: 70px;
+        padding: 10px;
+    }
+}
