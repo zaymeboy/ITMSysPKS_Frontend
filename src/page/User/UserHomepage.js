@@ -5,6 +5,7 @@ import Register from './Register';
 import Attend from './Attend';
 import Evaluate from './Evaluate';
 import MenuCompo from '../Component/MenuCompo';
+import Profile from '../Profile'
 
 
 //import benda yang perlu di menu
@@ -20,6 +21,7 @@ const itemInsideMenu =[
   {label:'Register Course' , key: 'reg'},
   {label:'Attend Course' , key: 'att'},
   {label:'Evaluate Course' , key: 'eva'},
+  {label:'Profile' , key: 'pro'},
 ];
 
 const styleMenu = {
@@ -40,12 +42,13 @@ function UserHomepage() {
       <MenuCompo/>
       <Layout >
         <Sider style={{backgroundColor: 'white'}}>
-          <Menu style={styleMenu} items={itemInsideMenu} onClick={handleClick} selectedKeys={selectedKey} />
+          <Menu mode='inline' style={styleMenu} items={itemInsideMenu} onClick={handleClick} selectedKeys={selectedKey} />
         </Sider>
         <Content>
           {selectedKey === 'reg' && <Register/>}
           {selectedKey === 'att' && <Attend/>}
           {selectedKey === 'eva' && <Evaluate/>}
+          {selectedKey === 'pro' && <Profile/>}
         </Content>
       </Layout>
       <Footer style={{fontSize:'12px', textAlign: 'center'}}>Copyright © 2024 ITMSysPKS - Internal Training Management System Politeknik Kuching Sarawak. All Rights Reserved.</Footer>

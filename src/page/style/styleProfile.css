@@ -4,4 +4,13 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 550px;
+}
+
+.btnUpdate{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
 }

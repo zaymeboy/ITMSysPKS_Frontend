@@ -1,9 +1,10 @@
 .styleHeader{
     background-color: white;
     display: flex ;
+    flex-direction: row;
     justify-content:space-between;
     align-items:center;
-    width: 100%;
+    padding: 0px 20px 0px 20px;
 }
 
 .styleImg{
@@ -17,10 +18,11 @@
 }
 
 .styleLogout{
-    background-color: rgb(4, 4, 174);
-    padding: 0px 5px 2px 5px;
+    background-color: #007bff;
     color: white;
-    border-radius: 2px;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
@@ -32,11 +34,15 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 130px;
+        gap: 10px;
+        padding: 10px;
     }
     .styleImg{
         width : auto;
         height: 70px;
         padding: 10px;
+    }
+    .styleLogout{
+        width: 100%;
     }
 }

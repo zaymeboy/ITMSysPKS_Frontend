@@ -14,7 +14,7 @@ function Profile() {
         {outside.map((a , i)=>(
             <BoxCompo label={a} fill={inside[i]}/>
         ))}
-        <button>Update</button>
+        <button className='btnUpdate'>Update</button>
     </div>
   )
 }

@@ -4,6 +4,7 @@ import ApproveCourse from './ApproveCourse';
 import CourseList from './CourseList';
 import StaffList from './StaffList';
 import Profile from '../Profile';
+import DashboaPage from '../Dashboard/DashboardPage'
 import './styleAdmin.css';
 
 import MenuCompo from '../Component/MenuCompo';
@@ -18,6 +19,7 @@ const layoutStyle= {
 }
 
 const itemInsideMenu =[
+  {label:'Dashboard' , key: 'dash'},
   {label:'Approve Course' , key: 'approve'},
   {label:'Course List' , key: 'list'},
   {label:'Staff List' , key: 'sList'},
@@ -31,7 +33,7 @@ const styleMenu = {
 function AdminHomepage() {
   
   // react kepada user
-  const [selectedKey , setSelectedKey]= useState('approve');
+  const [selectedKey , setSelectedKey]= useState('dash');
   const handleClick = (ev) =>{
     setSelectedKey(ev.key);
   }
@@ -41,9 +43,10 @@ function AdminHomepage() {
       <MenuCompo/>
       <Layout >
         <Sider style={{backgroundColor: 'white'}}>
-          <Menu style={styleMenu} items={itemInsideMenu} onClick={handleClick} selectedKeys={selectedKey} />
+          <Menu mode='inline' style={styleMenu} items={itemInsideMenu} onClick={handleClick} selectedKeys={selectedKey} />
         </Sider>
         <Content>
+          {selectedKey === 'dash' && <DashboaPage/>}
           {selectedKey === 'approve' && <ApproveCourse/>}
           {selectedKey === 'list' && <CourseList/>}
           {selectedKey === 'sList' && <StaffList/>}

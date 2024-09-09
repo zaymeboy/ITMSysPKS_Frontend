@@ -6,7 +6,7 @@ import './style/styleLogin2.css'
 //import backend
 import axios from 'axios';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , Link } from 'react-router-dom';
 
 function Login() {
     const navigate = useNavigate();
@@ -35,16 +35,22 @@ function Login() {
     };
     return (
         <div className='big-box'>
-        <div className='borderStyle'>
-            <h2>Login</h2>
-            <form className='centeringForm' onSubmit={handleSubmit}>
-            <div className='formstyle'>
-                <label for="">Username</label><input type='text' placeholder='Email or Username' onChange={e =>setUsername(e.target.value)}></input>
-                <label for="">Password</label><input type='text' placeholder='Password' onChange={e =>setPassword(e.target.value)} ></input>
-            </div>
-            <button type= 'submit' className='Registerbtn'>Login</button>
-            </form>
-        </div>
+          <div className='borderStyle'>
+              <h2>Login</h2>
+              <form className='centeringForm' onSubmit={handleSubmit}>
+                <div className='formstyle'>
+                    <div className='styleBox'>
+                      <p>Username</p><input type='text' placeholder='Email or Username' onChange={e =>setUsername(e.target.value)} style={{ width: '170px' , height: '20px' }}></input>
+                    </div>
+                    <div className='styleBox'>
+                      <p>Password</p><input type='text' placeholder='Password' onChange={e =>setPassword(e.target.value)} style={{ width: '170px' , height: '20px' }} ></input>
+                    </div>
+                </div>
+                <Link to='/Register' ><p>Register new account</p></Link>
+                <button type= 'submit' className='btnLogin'>Login</button>
+              </form>
+              
+          </div>
         </div>
     )
 }

@@ -24,15 +24,22 @@
 }
 
 .formstyle{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 300px;
 }
-.Registerbtn {
+
+.styleBox{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding:0px 10px 0px 20px;
+}
+.btnLogin {
     background-color: #007bff;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-  }
+}

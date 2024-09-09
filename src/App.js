@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // general page
-import LoginPage from './page/LoginPage';
+//import LoginPage from './page/LoginPage';
 import Error404 from './page/Error404';
 import Register from './page/Register';
 import Login from './page/Login';
@@ -18,9 +18,8 @@ import DashboardPage from './page/Dashboard/DashboardPage';
 function App() {
   return (
     <Routes>
-      <Route index element={<LoginPage/>}/>
+      <Route index element={<Login/>}/>
       <Route path='*' element={<Error404/>}/>
-      <Route path='/LoginPage' element={<LoginPage/>}/>
       <Route path='/Login' element={<Login/>}/>
       
       <Route path='/Admin' element={<AdminHomepage/>}/>
