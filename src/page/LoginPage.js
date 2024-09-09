@@ -45,7 +45,7 @@ function LoginPage() {
             <label htmlFor="password">Password:</label>
             <input type="password" name="input_password" placeholder='Password' onChange={e =>setPassword(e.target.value)} />
           </div>
-          <button type="submit">Login</button>
+          <button type="submit" className='loginbtn'>Login</button>
         </form>
       </div>
     </div>

@@ -11,7 +11,7 @@ function MenuCompo() {
     <Header className='styleHeader'>
       <img src={logoPks}  className='styleImg' alt='PKS Logo'/>
       <p className='welcomeText'>Welcome to Internal Training Management System PKS</p>
-      <Link to={'/LoginPage'} className='btnContainer'>
+      <Link to={'/Login'} className='btnContainer'>
         <a className='styleLogout' href="http://" target="_blank" rel="noopener noreferrer">Logout</a>
       </Link>
     </Header>
