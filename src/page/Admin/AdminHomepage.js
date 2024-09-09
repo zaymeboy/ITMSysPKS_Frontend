@@ -2,6 +2,8 @@ import {React, useState} from 'react';
 import {Layout, Menu} from 'antd';
 import ApproveCourse from './ApproveCourse';
 import CourseList from './CourseList';
+import StaffList from './StaffList';
+import Profile from '../Profile';
 import './styleAdmin.css';
 
 import MenuCompo from '../Component/MenuCompo';
@@ -18,6 +20,8 @@ const layoutStyle= {
 const itemInsideMenu =[
   {label:'Approve Course' , key: 'approve'},
   {label:'Course List' , key: 'list'},
+  {label:'Staff List' , key: 'sList'},
+  {label:'Profile' , key: 'p'},
 ];
 
 const styleMenu = {
@@ -42,6 +46,8 @@ function AdminHomepage() {
         <Content>
           {selectedKey === 'approve' && <ApproveCourse/>}
           {selectedKey === 'list' && <CourseList/>}
+          {selectedKey === 'sList' && <StaffList/>}
+          {selectedKey === 'p' && <Profile/>}
         </Content>
       </Layout>
       <Footer style={{fontSize:'12px', textAlign: 'center'}}>Copyright © 2024 ITMSysPKS - Internal Training Management System Politeknik Kuching Sarawak. All Rights Reserved.</Footer>

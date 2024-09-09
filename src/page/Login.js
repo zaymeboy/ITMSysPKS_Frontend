@@ -39,8 +39,8 @@ function Login() {
             <h2>Login</h2>
             <form className='centeringForm' onSubmit={handleSubmit}>
             <div className='formstyle'>
-                <label for="">Username :</label><input type='text' placeholder='Email or Username' onChange={e =>setUsername(e.target.value)}></input>
-                <label for="">Password :</label><input type='text' placeholder='Password' onChange={e =>setPassword(e.target.value)} ></input>
+                <label for="">Username</label><input type='text' placeholder='Email or Username' onChange={e =>setUsername(e.target.value)}></input>
+                <label for="">Password</label><input type='text' placeholder='Password' onChange={e =>setPassword(e.target.value)} ></input>
             </div>
             <button type= 'submit' className='Registerbtn'>Login</button>
             </form>
