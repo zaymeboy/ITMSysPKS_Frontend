@@ -2,7 +2,7 @@ import React from 'react'
 
 function RegisterCourse() {
   return (
-    <div>RegisterCourse</div>
+    <div>aliff modifie sini</div>
   )
 }
 
