@@ -40,21 +40,21 @@ function Login() {
             <div class="Polylogo">
                 <img src={img1} className='imgStyle' alt="logo" />
             </div>
-            <div class="boxHeader">
+            <div className="boxHeader">
                 <p>Login</p>
                 <div>Please login to use Internal Training Management System PKS</div>
             </div>
-            <form class="form_style" onSubmit={handleSubmit}>
-                <div class="input_style">
+            <form className="form_style" onSubmit={handleSubmit}>
+                <div className="input_style">
                     <input type="text" placeholder="Enter Email" onChange={e =>setUsername(e.target.value)}
                     autofocus required />
                 </div>
-                <div class="input_style">
+                <div className="input_style">
                     <input type="password" placeholder="Enter Password" onChange={e =>setPassword(e.target.value)}
                     required />
                 </div>
-                <div class="style_other_item">
-                    <div class="checkbox">
+                <div className="style_other_item">
+                    <div className="checkbox">
                         <input type="checkbox" id="rememberMeCheckbox"  />
                         <label for="rememberMeCheckbox">Remember me</label>
                     </div>
@@ -62,7 +62,7 @@ function Login() {
                 </div>
                 <button className='submitBtn' type="submit">Sign In</button>
             </form>
-            <div class="login-card-footer">
+            <div className="login-card-footer">
                 Don't have an account? <Link to='/Register'><a href="#">Register new account</a></Link>
             </div>
         </div>
