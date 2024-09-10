@@ -1,9 +1,8 @@
 .big-box{
-    height: 100vb;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
 }
 .centeringForm{
     display: flex;
@@ -12,15 +11,16 @@
     align-items: center;
     row-gap: 10px;
     padding: 20px;
-    border-radius: 3px;
+    border-radius: 3px; 
 }
 .borderStyle{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ccc;
+    border-radius: 20px;
     padding: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .formstyle{
