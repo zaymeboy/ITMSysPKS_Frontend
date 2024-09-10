@@ -7,6 +7,7 @@ import './style/styleLogin2.css'
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate , Link } from 'react-router-dom';
+import img1 from './Component/logo-pks.png';
 
 function Login() {
     const navigate = useNavigate();
@@ -16,7 +17,7 @@ function Login() {
   //letak password hasing
   // buat session
   function handleSubmit(event){
-    event.preventDefault();
+    event.preventDefault(); 
     axios.post('http://localhost:8001/login', {username , password})
     .then(res=> {
       //console.log(res.data);
@@ -34,24 +35,38 @@ function Login() {
     .catch(err => console.log(err))
     };
     return (
-        <div className='big-box'>
-          <div className='borderStyle'>
-              <h2>Login</h2>
-              <form className='centeringForm' onSubmit={handleSubmit}>
-                <div className='formstyle'>
-                    <div className='styleBox'>
-                      <p>Username</p><input type='text' placeholder='Email or Username' onChange={e =>setUsername(e.target.value)} style={{ width: '170px' , height: '20px' }}></input>
-                    </div>
-                    <div className='styleBox'>
-                      <p>Password</p><input type='text' placeholder='Password' onChange={e =>setPassword(e.target.value)} style={{ width: '170px' , height: '20px' }} ></input>
-                    </div>
+      <div className="bodyStyle">
+        <div className="loginBox">
+            <div class="Polylogo">
+                <img src={img1} className='imgStyle' alt="logo" />
+            </div>
+            <div class="boxHeader">
+                <h1>Login</h1>
+                <div>Please login to use Internal Training Management System PKS</div>
+            </div>
+            <form class="form_style" onSubmit={handleSubmit}>
+                <div class="input_style">
+                    <input type="text" placeholder="Enter Email" onChange={e =>setUsername(e.target.value)}
+                    autofocus required />
                 </div>
-                <Link to='/Register' ><p>Register new account</p></Link>
-                <button type= 'submit' className='btnLogin'>Login</button>
-              </form>
-              
-          </div>
+                <div class="input_style">
+                    <input type="password" placeholder="Enter Password" onChange={e =>setPassword(e.target.value)}
+                    required />
+                </div>
+                <div class="style_other_item">
+                    <div class="checkbox">
+                        <input type="checkbox" id="rememberMeCheckbox" checked />
+                        <label for="rememberMeCheckbox">Remember me</label>
+                    </div>
+                    <a href="#">I forgot my password!</a>
+                </div>
+                <button className='submitBtn' type="submit">Sign In</button>
+            </form>
+            <div class="login-card-footer">
+                Don't have an account? <a href="#">Create a free account.</a>
+            </div>
         </div>
+    </div>
     )
 }
 

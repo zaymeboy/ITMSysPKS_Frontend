@@ -4,7 +4,7 @@ const style_box = {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems:'center',
-  backgroundColor: 'white',
+  backgroundColor: 'white', 
   padding:'0px 10px 0px 20px',
 }
 
