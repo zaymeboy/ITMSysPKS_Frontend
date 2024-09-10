@@ -55,7 +55,7 @@ function Login() {
                 </div>
                 <div class="style_other_item">
                     <div class="checkbox">
-                        <input type="checkbox" id="rememberMeCheckbox" checked />
+                        <input type="checkbox" id="rememberMeCheckbox"  />
                         <label for="rememberMeCheckbox">Remember me</label>
                     </div>
                     <a href="#">I forgot my password!</a>
