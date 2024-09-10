@@ -31,12 +31,12 @@ function Register() {
     .catch(err => console.log(err))
     };
   return (
-    <div className='big-box'>
+    <div className='centerBox'>
       <div className='borderStyle'>
         <h2>Register Account</h2>
         <form className='centeringForm' onSubmit={handleRegister}>
           <div className='formstyle'>
-            <label for="">Username</label> <input type='text' onChange={e =>setUsername(e.target.value)}></input>
+            <label for="">Username</label> <input type='text'className='input-style' onChange={e =>setUsername(e.target.value)}></input>
             <label for="">Email</label><input type='text' onChange={e =>setEmail(e.target.value)}></input>
             <label for="">Password</label><input type='text' onChange={e =>setPassword(e.target.value)}></input>
             <label for="">Confirm Password</label><input type='text' ></input>
