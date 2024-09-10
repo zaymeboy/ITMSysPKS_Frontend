@@ -1,7 +1,7 @@
 import React from 'react'
 
 // import style
-import './style/styleLogin2.css'
+import './style/styleLogin.css'
 
 //import backend
 import axios from 'axios';
@@ -41,7 +41,7 @@ function Login() {
                 <img src={img1} className='imgStyle' alt="logo" />
             </div>
             <div class="boxHeader">
-                <h1>Login</h1>
+                <p>Login</p>
                 <div>Please login to use Internal Training Management System PKS</div>
             </div>
             <form class="form_style" onSubmit={handleSubmit}>
@@ -63,7 +63,7 @@ function Login() {
                 <button className='submitBtn' type="submit">Sign In</button>
             </form>
             <div class="login-card-footer">
-                Don't have an account? <a href="#">Create a free account.</a>
+                Don't have an account? <Link to='/Register'><a href="#">Register new account</a></Link>
             </div>
         </div>
     </div>
