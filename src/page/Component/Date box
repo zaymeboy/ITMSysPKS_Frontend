@@ -1,0 +1,18 @@
+import React from 'react';
+
+const DateBox = ({ label, value, onChange, error }) => {
+  return (
+    <div>
+      <label>{label}:</label>
+      <input
+        type="date"
+        name="date"
+        value={value}
+        onChange={onChange}
+      />
+      {error && <span style={{ color: 'red' }}>{error}</span>}
+    </div>
+  );
+};
+
+export default DateBox;
