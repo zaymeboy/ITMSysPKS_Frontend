@@ -1,0 +1,26 @@
+import React from 'react';
+
+const ComboBox = ({ label, options = [], value, onChange, error }) => {
+
+  const adjustedOptions = options.length >= 8 ? options : [
+    ...options, 
+    ...Array.from({ length: 8 - options.length }, (_, index) => `Placeholder ${index + 1}`)
+  ];
+
+  return (
+    <div>
+      <label>{label}:</label>
+      <select name="option" value={value} onChange={(e) => onChange(e)}>
+        <option value="">Select an option</option>
+        {adjustedOptions.map((option, index) => (
+          <option key={index} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+      {error && <span style={{ color: 'red' }}>{error}</span>}
+    </div>
+  );
+};
+
+export default ComboBox;
