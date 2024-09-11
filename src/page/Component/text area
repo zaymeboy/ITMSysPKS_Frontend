@@ -1,0 +1,13 @@
+import React from 'react';
+
+const TextArea = ({ label, value, onChange, error }) => {
+  return (
+    <div>
+      <label>{label}:</label>
+      <textarea name="description" value={value} onChange={onChange} />
+      {error && <span style={{ color: 'red' }}>{error}</span>}
+    </div>
+  );
+};
+
+export default TextArea;
