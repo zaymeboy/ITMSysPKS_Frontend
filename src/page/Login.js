@@ -21,13 +21,14 @@ function Login() {
     axios.post('http://localhost:8001/login', {username , password})
     .then(res=> {
       //console.log(res.data);
+      console.log(res.data);
       
       if (res.data === "user"){
         navigate('/User');
       }else if (res.data === "staff"){
         navigate('/Staff');
       }else if (res.data === "admin"){
-          navigate('/Admin');
+        navigate('/Admin');
       }else{
         alert("Wrong username or password");
       }
