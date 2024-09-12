@@ -22,7 +22,7 @@ function Error404() {
     <div style={divStyle}>
         <h1>Error404</h1>
         <div style={styleContainer}>
-          <Link to="/LoginPage" style={{ textDecoration: 'none' }}><p style={styleLink}>Go to Login Page</p></Link>
+          <Link to="/Login" style={{ textDecoration: 'none' }}><p style={styleLink}>Go to Login Page</p></Link>
         </div>
     </div>
   )

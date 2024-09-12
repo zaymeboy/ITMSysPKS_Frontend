@@ -1,4 +1,6 @@
-import React from 'react'
+import {React , useEffect}from 'react'
+
+//import session
 
 // import style
 import './style/styleLogin.css'
@@ -10,20 +12,44 @@ import { useNavigate , Link } from 'react-router-dom';
 import img1 from './Component/logo-pks.png';
 
 function Login() {
-    const navigate = useNavigate();
-    const [username , setUsername] = useState('');
-    const [password , setPassword] = useState('');
-    //improvement nanti
-  //letak password hasing
-  // buat session
-  function handleSubmit(event){
-    event.preventDefault(); 
-    axios.post('http://localhost:8001/login', {username , password})
+  const navigate = useNavigate();
+  const [email , setEmail] = useState('');
+  const [password , setPassword] = useState('');
+
+  //kegunaan session
+  //dapatkan userId dari database
+  //=====================================
+
+  function getUserId(){
+    const postData={
+      "email": email
+    };
+    axios.post('http://localhost:8001/session', postData)
     .then(res=> {
       //console.log(res.data);
-      console.log(res.data);
-      
+      return(res.data);
+    })
+    .catch(err => console.log(err))
+  };
+  
+  //const userId = getUserId();
+  //=====================================
+
+  
+  function handleSubmit(event){
+    event.preventDefault(); 
+    const postData={
+      "email": email , 
+      "password": password ,
+       "role": "user"
+    }
+    //{email , password}
+    axios.post('http://localhost:8001/login', postData)
+    .then(res=> {
+      //console.log(res.data);
       if (res.data === "user"){
+        const userID = getUserId();
+        //tambah session guna userID
         navigate('/User');
       }else if (res.data === "staff"){
         navigate('/Staff');
@@ -35,10 +61,12 @@ function Login() {
     })
     .catch(err => console.log(err))
     };
+
+
     return (
       <div className="bodyStyle">
         <div className="loginBox">
-            <div class="Polylogo">
+            <div className="Polylogo">
                 <img src={img1} className='imgStyle' alt="logo" />
             </div>
             <div className="boxHeader">
@@ -47,8 +75,8 @@ function Login() {
             </div>
             <form className="form_style" onSubmit={handleSubmit}>
                 <div className="input_style">
-                    <input type="text" placeholder="Enter Email" onChange={e =>setUsername(e.target.value)}
-                    autofocus required />
+                    <input type="text" placeholder="Enter Email" onChange={e =>setEmail(e.target.value)}
+                    autoFocus required />
                 </div>
                 <div className="input_style">
                     <input type="password" placeholder="Enter Password" onChange={e =>setPassword(e.target.value)}
@@ -57,14 +85,14 @@ function Login() {
                 <div className="style_other_item">
                     <div className="checkbox">
                         <input type="checkbox" id="rememberMeCheckbox"  />
-                        <label for="rememberMeCheckbox">Remember me</label>
+                        <label htmlFor="rememberMeCheckbox">Remember me</label>
                     </div>
                     <a href="#">I forgot my password!</a>
                 </div>
                 <button className='submitBtn' type="submit">Sign In</button>
             </form>
             <div className="login-card-footer">
-                Don't have an account? <Link to='/Register'><a href="#">Register new account</a></Link>
+                Don't have an account? <Link to='/Register'>Register new account</Link>
             </div>
         </div>
     </div>
